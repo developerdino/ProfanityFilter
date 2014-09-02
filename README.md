@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mofodojodino/ProfanityFilter.svg?branch=develop)](https://travis-ci.org/mofodojodino/ProfanityFilter)
+
 ## Profanity Filter
 
 A simple class to test if a string has a profanity in it.
