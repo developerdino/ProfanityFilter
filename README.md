@@ -12,4 +12,4 @@ https://github.com/fastwebmedia/Profanity-Filter
 
 ### License
 
-The Butler Blog is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+ProfanityFilter is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
