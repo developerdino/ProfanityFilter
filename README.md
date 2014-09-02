@@ -4,9 +4,9 @@ A simple class to test if a string has a profanity in it.
 
 Detects many variations of swear words including trying to disguising the word with characters inbetween the letters.
 
-## Kodos
+## Kudos
 
-Have to mention the following project as it gave me a good foundation for the regex.
+Have to mention the following project as it gave me a good foundation for the regex and a list of swear words.
 
 https://github.com/fastwebmedia/Profanity-Filter
 
