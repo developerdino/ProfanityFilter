@@ -2,7 +2,7 @@
 
 namespace mofodojodino\ProfanityFilter;
 
-class Parser
+class Check
 {
     /**
      * Regular expression for checking between swear word characters
@@ -50,6 +50,9 @@ class Parser
         '/z/' => '(z|z\.|z\-|Ζ|ž|Ž|ź|Ź|ż|Ż)+{$}',
     );
 
+    /**
+     * @param null $config
+     */
     public function __construct($config = null)
     {
         if ($config === null) {
@@ -59,15 +62,30 @@ class Parser
         $this->badwords = $this->loadBadwordsFromFile($config);
     }
 
-    public function hasProfanityCheck($string)
+    /**
+     * Checks string for profanities based on list 'badwords'
+     *
+     * @param $string
+     *
+     * @return bool
+     */
+    public function hasProfanity($string)
     {
-        if (empty($string)) return false;
-
-        for ($i = 0; $i < count($this->badwords); $i++) {
-            $badwords[$i] = '/' . preg_replace(array_keys($this->replacements), array_values($this->replacements), $this->badwords[$i]) . '/i';
-            $badwords[$i] = str_replace('{$}', self::IN_BETWEEN_REGEX, $badwords[$i]);
+        if (empty($string)) {
+            return false;
         }
-        foreach($badwords as $profanity) {
+
+        $badwords = array();
+        for ($i = 0; $i < count($this->badwords); $i++) {
+            $badwords[ $i ] = '/' . preg_replace(
+                    array_keys($this->replacements),
+                    array_values($this->replacements),
+                    $this->badwords[ $i ]
+                ) . '/i';
+            $badwords[ $i ] = str_replace('{$}', self::IN_BETWEEN_REGEX, $badwords[ $i ]);
+        }
+
+        foreach ($badwords as $profanity) {
             if ($this->stringHasProfanity($string, $profanity)) {
                 return true;
             }
@@ -76,12 +94,22 @@ class Parser
         return false;
     }
 
+    /**
+     * Checks a string against a profanity.
+     *
+     * @param $string
+     * @param $profanity
+     *
+     * @return bool
+     */
     private function stringHasProfanity($string, $profanity)
     {
         return preg_match($profanity, $string) === 1;
     }
 
     /**
+     * Load 'badwords' from config file.
+     *
      * @param $config
      *
      * @return array
