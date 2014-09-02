@@ -26,8 +26,6 @@ Check string for profanity that has characters doubled up. E.g. `bbaaddwwoorrdd`
 
 Also works with combinations of the above. E.g. `b|â|d|Ψ|0|rr|d`
 
-Detects many variations of swear words including trying to disguise the word with characters in between the letters.
-
 ## Installation
 
 Install this package via composer.
