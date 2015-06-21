@@ -76,7 +76,9 @@ class Check
         }
 
         $badwords = array();
-        for ($i = 0; $i < count($this->badwords); $i++) {
+        $badwordsCount = count($this->badwords);
+
+        for ($i = 0; $i < $badwordsCount; $i++) {
             $badwords[ $i ] = '/' . preg_replace(
                     array_keys($this->replacements),
                     array_values($this->replacements),
