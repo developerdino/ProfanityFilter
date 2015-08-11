@@ -116,4 +116,9 @@ class CheckSpec extends ObjectBehavior
             $this->hasProfanity("c{$s}{$s}u{$s}{$s}n{$s}{$s}t")->shouldReturn(true);
         }
     }
+
+    public function it_obfuscates_a_string_that_contains_a_profanity()
+    {
+        $this->obfuscateIfProfane("cunt")->shouldReturn("****");
+    }
 }
