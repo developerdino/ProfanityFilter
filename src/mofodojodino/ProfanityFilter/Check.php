@@ -115,21 +115,21 @@ class Check
     /**
      * Checks strings concat and replace both with '*' if profanity found
      *
-     * @param $first_name
-     * @param $last_name
+     * @param $firstName
+     * @param $lastName
      *
      * @return array
      */
-    public function filterNames($first_name, $last_name)
+    public function filterNames($firstName, $lastName)
     {
-        if ($this->hasProfanity($first_name.$last_name)) {
-            $first_name = str_repeat("*", strlen($first_name));
-            $last_name  = str_repeat("*", strlen($last_name));
+        if ($this->hasProfanity($firstName.$lastName)) {
+            $firstName = str_repeat("*", strlen($firstName));
+            $lastName  = str_repeat("*", strlen($lastName));
         }
 
         return [
-            'first_name' => $first_name,
-            'last_name'  => $last_name
+            'firstName' => $firstName,
+            'lastName'  => $lastName
         ];
     }
 
