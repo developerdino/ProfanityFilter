@@ -97,6 +97,22 @@ class Check
     }
 
     /**
+     * Obfuscates string that contains a 'badword'
+     *
+     * @param $string
+     *
+     * @return string
+     */
+    public function obfuscateIfProfane($string)
+    {
+        if ($this->hasProfanity($string)) {
+            $string = str_repeat("*", strlen($string));
+        }
+
+        return $string;
+    }
+
+    /**
      * Checks a string against a profanity.
      *
      * @param $string
