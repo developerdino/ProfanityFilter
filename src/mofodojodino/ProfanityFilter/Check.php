@@ -97,6 +97,43 @@ class Check
     }
 
     /**
+     * Checks string for profanities and replace with '*' if profanity found
+     *
+     * @param $string
+     *
+     * @return string
+     */
+    public function filterProfanity($string)
+    {
+        if ($this->hasProfanity($string)) {
+            $string = str_repeat("*", strlen($string));
+        }
+
+        return $string;
+    }
+
+    /**
+     * Checks strings concat and replace both with '*' if profanity found
+     *
+     * @param $first_name
+     * @param $last_name
+     *
+     * @return array
+     */
+    public function filterNames($first_name, $last_name)
+    {
+        if ($this->hasProfanity($first_name.$last_name)) {
+            $first_name = str_repeat("*", strlen($first_name));
+            $last_name  = str_repeat("*", strlen($last_name));
+        }
+
+        return [
+            'first_name' => $first_name,
+            'last_name'  => $last_name
+        ];
+    }
+
+    /**
      * Checks a string against a profanity.
      *
      * @param $string
