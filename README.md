@@ -26,12 +26,38 @@ Check string for profanity that has characters doubled up. E.g. `bbaaddwwoorrdd`
 
 Also works with combinations of the above. E.g. `b|â|d|Ψ|0|rr|d`
 
-## Installation
+# Installation
 
-Install this package via composer.
+##### Install this package via composer.
 
 ```
 php composer.phar require mofodojodino/profanity-filter
+```
+
+# Usage
+
+##### Checks string for profanities based on 'badwords' list:
+```
+use mofodojodino\ProfanityFilter\Check;
+...
+class Whatever
+{
+    $string = 'badword';
+    $profanity = new Check();
+    if($profanity->hasProfanity($string))
+        return "This string contains a profanity";
+```
+
+##### Replace string with '*' if profanity found
+```
+    $filteredString = $profanity->filterProfanity($string);
+```
+
+##### Replace names with '*' if profanity found (it will also check strings concatenation)
+```
+    $filtered          = $profanity->filterNames($firstName, $lastName);
+    $filteredFirstName = $filtered['firstName'];
+    $filteredLastName  = $filtered['lastName'];
 ```
 
 ## Kudos
