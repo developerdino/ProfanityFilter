@@ -110,15 +110,29 @@ class CheckSpec extends ObjectBehavior
         );
         foreach ($spacers as $s) {
             $this->hasProfanity("c{$s}u{$s}n{$s}t")->shouldReturn(true);
-        }
-
-        foreach ($spacers as $s) {
             $this->hasProfanity("c{$s}{$s}u{$s}{$s}n{$s}{$s}t")->shouldReturn(true);
+            $this->hasProfanity("cc{$s}{$s}uu{$s}{$s}nn{$s}{$s}tt")->shouldReturn(true);
         }
     }
 
     public function it_obfuscates_a_string_that_contains_a_profanity()
     {
         $this->obfuscateIfProfane("cunt")->shouldReturn("****");
+    }
+
+    public function it_does_not_detect_as_as_a_profanity()
+    {
+        $this->hasProfanity("as")->shouldReturn(false);
+        $this->hasProfanity("a.s.")->shouldReturn(false);
+        $this->hasProfanity("a s")->shouldReturn(false);
+        $this->hasProfanity("a .s .")->shouldReturn(false);
+    }
+
+    public function it_does_detect_ass_as_a_profanity()
+    {
+        $this->hasProfanity("ass")->shouldReturn(true);
+        $this->hasProfanity("a s s ")->shouldReturn(true);
+        $this->hasProfanity("a 's [s [")->shouldReturn(true);
+        $this->hasProfanity("a$ 's$ [s$ [")->shouldReturn(true);
     }
 }
