@@ -135,4 +135,16 @@ class CheckSpec extends ObjectBehavior
         $this->hasProfanity("a 's [s [")->shouldReturn(true);
         $this->hasProfanity("a$ 's$ [s$ [")->shouldReturn(true);
     }
+
+    public function it_does_detect_profanities_in_dirty_words_with_spaces_between_letters()
+    {
+        $this->hasProfanity("c u n t")->shouldReturn(true);
+        $this->hasProfanity("f  u  c  k")->shouldReturn(true);
+    }
+
+    public function it_does_not_detect_profanities_in_clean_strings_with_spaces_between_letters()
+    {
+        $this->hasProfanity("r i g h t")->shouldReturn(false);
+        $this->hasProfanity("h e l l o")->shouldReturn(false);
+    }
 }

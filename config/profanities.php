@@ -604,7 +604,6 @@ return array(
     'hatred',
     'headfuck',
     'heeb',
-    'hell',
     'hells',
     'herpes',
     'hijack',
