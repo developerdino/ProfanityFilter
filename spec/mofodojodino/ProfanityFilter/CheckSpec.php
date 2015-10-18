@@ -152,4 +152,9 @@ class CheckSpec extends ObjectBehavior
     {
         $this->hasProfanity("anthony")->shouldReturn(false);
     }
+
+    public function it_does_not_detect_mick_as_a_swear_word()
+    {
+        $this->hasProfanity("Mick")->shouldReturn(false);
+    }
 }
