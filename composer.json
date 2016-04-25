@@ -5,7 +5,8 @@
         "php": ">=5.3.3"
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.0"
+        "phpspec/phpspec": "~2.0",
+        "phpunit/phpunit": "~4.4"
     },
     "autoload": {"psr-0": {"": "src"}},
     "license": "MIT",
