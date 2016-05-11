@@ -55,6 +55,8 @@ Have to mention the following project as it gave me a good foundation for the re
 
 https://github.com/fastwebmedia/Profanity-Filter
 
+Thanks to @jackcsk for his contribution, adding the ability to use a plain array instead of a file for the list of profanities. Available in version > v1.3.0.
+
 ### License
 
 ProfanityFilter is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
