@@ -152,7 +152,12 @@ class Check
             $config = __DIR__ . '/../../../config/profanities.php';
         }
 
-        $this->profanities          = $this->loadProfanitiesFromFile($config);
+        if (is_array($config)) {
+            $this->profanities = $config;
+        } else {
+            $this->profanities = $this->loadProfanitiesFromFile($config);
+        }
+
         $this->separatorExpression  = $this->generateSeparatorExpression();
         $this->characterExpressions = $this->generateCharacterExpressions();
     }

@@ -34,6 +34,21 @@ Install this package via composer.
 php composer.phar require mofodojodino/profanity-filter
 ```
 
+## Usage
+```php
+/* default constructor */
+$check = new Check();
+$hasProfanity = $check->hasProfanity($badWords);
+$cleanWords = $check->obfuscateIfProfane($badWords);
+
+/* customized word list from file */
+$check = new Check('path.to/wordlist.php');
+
+/* customized word list from array */
+$badWords = array('bad', 'words') // or load from db
+$check = new Check($badWords);
+```
+
 ## Kudos
 
 Have to mention the following project as it gave me a good foundation for the regex and a list of swear words.
