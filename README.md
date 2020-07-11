@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/mofodojodino/ProfanityFilter.svg?branch=develop)](https://travis-ci.org/mofodojodino/ProfanityFilter)
-
-## Profanity Filter
+# Profanity Filter
 
 A simple class to test if a string has a profanity in it.
 
@@ -45,7 +43,7 @@ $cleanWords = $check->obfuscateIfProfane($badWords);
 $check = new Check('path.to/wordlist.php');
 
 /* customized word list from array */
-$badWords = array('bad', 'words') // or load from db
+$badWords = array('bad', 'words'); // or load from db
 $check = new Check($badWords);
 ```
 
