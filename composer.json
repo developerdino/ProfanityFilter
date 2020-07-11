@@ -10,6 +10,11 @@
             "": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
     "description": "Filters out profanities from strings.",
     "license": "MIT",
     "name": "mofodojodino/profanity-filter",
