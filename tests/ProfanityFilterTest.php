@@ -1,7 +1,9 @@
 <?php
 
+
+namespace Tests;
+
 use mofodojodino\ProfanityFilter\Check;
-use PHPUnit\Framework\TestCase;
 
 /**
  * Description of ProfanityFilterTest
@@ -14,7 +16,7 @@ class ProfanityFilterTest extends TestCase {
     
     public function testProfanityCheck() {
         $check = new Check();
-        $this->assertTrue($check->hasProfanity('such a dumbass'));
+        $this->assertTrue($this->checker->hasProfanity('such a dumbass'));
         $this->assertFalse($check->hasProfanity('this is a clean sentence'));
     }
     
