@@ -120,7 +120,9 @@ class CheckTest extends TestCase
     {
         $this->assertTrue($this->checker->hasProfanity("c{$spacer}u{$spacer}n{$spacer}t"));
         $this->assertTrue($this->checker->hasProfanity("c{$spacer}{$spacer}u{$spacer}{$spacer}n{$spacer}{$spacer}t"));
-        $this->assertTrue($this->checker->hasProfanity("cc{$spacer}{$spacer}uu{$spacer}{$spacer}nn{$spacer}{$spacer}tt"));
+        $this->assertTrue(
+            $this->checker->hasProfanity("cc{$spacer}{$spacer}uu{$spacer}{$spacer}nn{$spacer}{$spacer}tt")
+        );
     }
 
     /**
