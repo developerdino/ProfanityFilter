@@ -1,13 +1,14 @@
 <?php
 
 use mofodojodino\ProfanityFilter\Check;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Description of ProfanityFilterTest
  *
  * @author Jack Cheung <jack@jackcheung.com>
  */
-class ProfanityFilterTest extends \PHPUnit_Framework_TestCase {
+class ProfanityFilterTest extends TestCase {
 
     public $tester;
     

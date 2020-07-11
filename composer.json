@@ -1,28 +1,32 @@
 {
-    "name": "mofodojodino/profanity-filter",
-    "description": "Filters out profanities from strings.",
-    "require": {
-        "php": ">=5.3.3"
-    },
-    "require-dev": {
-        "phpspec/phpspec": "~2.0",
-        "phpunit/phpunit": "~4.8"
-    },
-    "autoload": {"psr-0": {"": "src"}},
-    "license": "MIT",
     "authors": [
         {
             "name": "Dean Tedesco",
             "email": "dino@tedesco.net.au"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    },
+    "description": "Filters out profanities from strings.",
+    "license": "MIT",
+    "name": "mofodojodino/profanity-filter",
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~6.0",
+        "phpunit/phpunit": "~9.0"
+    },
     "scripts": {
         "test": [
             "@specTest",
             "@unitTest"
         ],
         "specTest": "phpspec run",
-        "unitTest": "phpunit tests/ProfanityFilterTest"
+        "unitTest": "phpunit tests"
     },
     "scripts-descriptions": {
         "test": "Run all the tests!",
