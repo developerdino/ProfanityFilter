@@ -149,7 +149,7 @@ class Check
     public function __construct($config = null)
     {
         if ($config === null) {
-            $config = __DIR__ . '/../../../config/profanities.php';
+            $config = __DIR__ . '/../config/profanities.php';
         }
 
         if (is_array($config)) {
