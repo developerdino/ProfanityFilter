@@ -2,7 +2,7 @@
     "name": "mofodojodino/profanity-filter",
     "description": "Filters out profanities from strings.",
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=7.2"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0",
