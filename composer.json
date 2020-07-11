@@ -7,7 +7,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "mofodojodino\\ProfanityFilter\\": "src"
+            "DeveloperDino\\ProfanityFilter\\": "src"
         }
     },
     "autoload-dev": {
@@ -17,7 +17,7 @@
     },
     "description": "Filters out profanities from strings.",
     "license": "MIT",
-    "name": "mofodojodino/profanity-filter",
+    "name": "developerdino/profanity-filter",
     "require": {
         "php": ">=7.2"
     },

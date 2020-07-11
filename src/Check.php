@@ -1,6 +1,6 @@
 <?php
 
-namespace mofodojodino\ProfanityFilter;
+namespace developerdino\ProfanityFilter;
 
 class Check
 {
