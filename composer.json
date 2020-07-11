@@ -22,20 +22,16 @@
         "php": ">=7.2"
     },
     "require-dev": {
-        "phpspec/phpspec": "~6.0",
         "phpunit/phpunit": "~9.0"
     },
     "scripts": {
         "test": [
-            "@specTest",
             "@unitTest"
         ],
-        "specTest": "phpspec run",
         "unitTest": "phpunit tests"
     },
     "scripts-descriptions": {
         "test": "Run all the tests!",
-        "specTest": "Run PHP Spec tests!",
         "unitTest": "Run PHP Unit tests!"
     }
 }
