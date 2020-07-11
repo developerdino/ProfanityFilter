@@ -15,5 +15,18 @@
             "name": "Dean Tedesco",
             "email": "dino@tedesco.net.au"
         }
-    ]
+    ],
+    "scripts": {
+        "test": [
+            "phpspec run",
+            "phpunit -- --bootstrap vendor/autoload.php tests/ProfanityFilterTest"
+        ],
+        "specTest": "phpspec run",
+        "unitTest": "phpunit --bootstrap vendor/autoload.php tests/ProfanityFilterTest"
+    },
+    "scripts-descriptions": {
+        "test": "Run all the tests!",
+        "specTest": "Run PHP Spec tests!",
+        "unitTest": "Run PHP Unit tests!"
+    }
 }
