@@ -1,6 +1,6 @@
 <?php
 
-namespace developerdino\ProfanityFilter;
+namespace DeveloperDino\ProfanityFilter;
 
 class Check
 {
@@ -9,15 +9,15 @@ class Check
     /**
      * Escaped separator characters
      */
-    protected $escapedSeparatorCharacters = array(
+    protected $escapedSeparatorCharacters = [
         '\s',
-    );
+    ];
 
     /**
      * Unescaped separator characters.
      * @var array
      */
-    protected $separatorCharacters = array(
+    protected $separatorCharacters = [
         '@',
         '#',
         '%',
@@ -49,7 +49,7 @@ class Check
         '?',
         '.',
         '/',
-    );
+    ];
 
 
     /**
@@ -57,8 +57,8 @@ class Check
      *
      * @var array
      */
-    protected $characterSubstitutions = array(
-        '/a/' => array(
+    protected $characterSubstitutions = [
+        '/a/' => [
             'a',
             '4',
             '@',
@@ -81,21 +81,21 @@ class Check
             'Δ',
             'Λ',
             'λ',
-        ),
-        '/b/' => array('b', '8', '\\', '3', 'ß', 'Β', 'β'),
-        '/c/' => array('c', 'Ç', 'ç', 'ć', 'Ć', 'č', 'Č', '¢', '€', '<', '(', '{', '©'),
-        '/d/' => array('d', '\\', ')', 'Þ', 'þ', 'Ð', 'ð'),
-        '/e/' => array('e', '3', '€', 'È', 'è', 'É', 'é', 'Ê', 'ê', 'ë', 'Ë', 'ē', 'Ē', 'ė', 'Ė', 'ę', 'Ę', '∑'),
-        '/f/' => array('f', 'ƒ'),
-        '/g/' => array('g', '6', '9'),
-        '/h/' => array('h', 'Η'),
-        '/i/' => array('i', '!', '|', ']', '[', '1', '∫', 'Ì', 'Í', 'Î', 'Ï', 'ì', 'í', 'î', 'ï', 'ī', 'Ī', 'į', 'Į'),
-        '/j/' => array('j'),
-        '/k/' => array('k', 'Κ', 'κ'),
-        '/l/' => array('l', '!', '|', ']', '[', '£', '∫', 'Ì', 'Í', 'Î', 'Ï', 'ł', 'Ł'),
-        '/m/' => array('m'),
-        '/n/' => array('n', 'η', 'Ν', 'Π', 'ñ', 'Ñ', 'ń', 'Ń'),
-        '/o/' => array(
+        ],
+        '/b/' => ['b', '8', '\\', '3', 'ß', 'Β', 'β'],
+        '/c/' => ['c', 'Ç', 'ç', 'ć', 'Ć', 'č', 'Č', '¢', '€', '<', '(', '{', '©'],
+        '/d/' => ['d', '\\', ')', 'Þ', 'þ', 'Ð', 'ð'],
+        '/e/' => ['e', '3', '€', 'È', 'è', 'É', 'é', 'Ê', 'ê', 'ë', 'Ë', 'ē', 'Ē', 'ė', 'Ė', 'ę', 'Ę', '∑'],
+        '/f/' => ['f', 'ƒ'],
+        '/g/' => ['g', '6', '9'],
+        '/h/' => ['h', 'Η'],
+        '/i/' => ['i', '!', '|', ']', '[', '1', '∫', 'Ì', 'Í', 'Î', 'Ï', 'ì', 'í', 'î', 'ï', 'ī', 'Ī', 'į', 'Į'],
+        '/j/' => ['j'],
+        '/k/' => ['k', 'Κ', 'κ'],
+        '/l/' => ['l', '!', '|', ']', '[', '£', '∫', 'Ì', 'Í', 'Î', 'Ï', 'ł', 'Ł'],
+        '/m/' => ['m'],
+        '/n/' => ['n', 'η', 'Ν', 'Π', 'ñ', 'Ñ', 'ń', 'Ń'],
+        '/o/' => [
             'o',
             '0',
             'Ο',
@@ -120,26 +120,26 @@ class Check
             'Ō',
             'õ',
             'Õ',
-        ),
-        '/p/' => array('p', 'ρ', 'Ρ', '¶', 'þ'),
-        '/q/' => array('q'),
-        '/r/' => array('r', '®'),
-        '/s/' => array('s', '5', '$', '§', 'ß', 'Ś', 'ś', 'Š', 'š'),
-        '/t/' => array('t', 'Τ', 'τ'),
-        '/u/' => array('u', 'υ', 'µ', 'û', 'ü', 'ù', 'ú', 'ū', 'Û', 'Ü', 'Ù', 'Ú', 'Ū'),
-        '/v/' => array('v', 'υ', 'ν'),
-        '/w/' => array('w', 'ω', 'ψ', 'Ψ'),
-        '/x/' => array('x', 'Χ', 'χ'),
-        '/y/' => array('y', '¥', 'γ', 'ÿ', 'ý', 'Ÿ', 'Ý'),
-        '/z/' => array('z', 'Ζ', 'ž', 'Ž', 'ź', 'Ź', 'ż', 'Ż'),
-    );
+        ],
+        '/p/' => ['p', 'ρ', 'Ρ', '¶', 'þ'],
+        '/q/' => ['q'],
+        '/r/' => ['r', '®'],
+        '/s/' => ['s', '5', '$', '§', 'ß', 'Ś', 'ś', 'Š', 'š'],
+        '/t/' => ['t', 'Τ', 'τ'],
+        '/u/' => ['u', 'υ', 'µ', 'û', 'ü', 'ù', 'ú', 'ū', 'Û', 'Ü', 'Ù', 'Ú', 'Ū'],
+        '/v/' => ['v', 'υ', 'ν'],
+        '/w/' => ['w', 'ω', 'ψ', 'Ψ'],
+        '/x/' => ['x', 'Χ', 'χ'],
+        '/y/' => ['y', '¥', 'γ', 'ÿ', 'ý', 'Ÿ', 'Ý'],
+        '/z/' => ['z', 'Ζ', 'ž', 'Ž', 'ź', 'Ź', 'ż', 'Ż'],
+    ];
 
     /**
      * List of profanities to test against.
      *
      * @var array
      */
-    protected $profanities = array();
+    protected $profanities = [];
     protected $separatorExpression;
     protected $characterExpressions;
 
@@ -158,41 +158,72 @@ class Check
             $this->profanities = $this->loadProfanitiesFromFile($config);
         }
 
-        $this->separatorExpression  = $this->generateSeparatorExpression();
+        $this->separatorExpression = $this->generateSeparatorExpression();
         $this->characterExpressions = $this->generateCharacterExpressions();
     }
 
     /**
-     * Checks string for profanities based on list 'profanities'
+     * Load 'profanities' from config file.
      *
-     * @param $string
+     * @param $config
      *
-     * @return bool
+     * @return array
      */
-    public function hasProfanity($string)
+    private function loadProfanitiesFromFile($config)
     {
-        if (empty($string)) {
-            return false;
+        /** @noinspection PhpIncludeInspection */
+        return include($config);
+    }
+
+    /**
+     * Generates the separator regular expression.
+     *
+     * @return string
+     */
+    private function generateSeparatorExpression()
+    {
+        return $this->generateEscapedExpression($this->separatorCharacters, $this->escapedSeparatorCharacters);
+    }
+
+    /**
+     * Generates the separator regex to test characters in between letters.
+     *
+     * @param array $characters
+     * @param array $escapedCharacters
+     * @param string $quantifier
+     *
+     * @return string
+     */
+    private function generateEscapedExpression(
+        array $characters = [],
+        array $escapedCharacters = [],
+        $quantifier = '*?'
+    ) {
+        $regex = $escapedCharacters;
+        foreach ($characters as $character) {
+            $regex[] = preg_quote($character, '/');
         }
 
-        $profanities    = array();
-        $profanityCount = count($this->profanities);
+        return '[' . implode('', $regex) . ']' . $quantifier;
+    }
 
-        for ($i = 0; $i < $profanityCount; $i++) {
-            $profanities[ $i ] = $this->generateProfanityExpression(
-                $this->profanities[ $i ],
-                $this->characterExpressions,
-                $this->separatorExpression
-            );
+    /**
+     * Generates a list of regular expressions for each character substitution.
+     *
+     * @return array
+     */
+    protected function generateCharacterExpressions()
+    {
+        $characterExpressions = [];
+        foreach ($this->characterSubstitutions as $character => $substitutions) {
+            $characterExpressions[$character] = $this->generateEscapedExpression(
+                    $substitutions,
+                    [],
+                    '+?'
+                ) . self::SEPARATOR_PLACEHOLDER;
         }
 
-        foreach ($profanities as $profanity) {
-            if ($this->stringHasProfanity($string, $profanity)) {
-                return true;
-            }
-        }
-
-        return false;
+        return $characterExpressions;
     }
 
     /**
@@ -209,6 +240,39 @@ class Check
         }
 
         return $string;
+    }
+
+    /**
+     * Checks string for profanities based on list 'profanities'
+     *
+     * @param $string
+     *
+     * @return bool
+     */
+    public function hasProfanity($string)
+    {
+        if (empty($string)) {
+            return false;
+        }
+
+        $profanities = [];
+        $profanityCount = count($this->profanities);
+
+        for ($i = 0; $i < $profanityCount; $i++) {
+            $profanities[$i] = $this->generateProfanityExpression(
+                $this->profanities[$i],
+                $this->characterExpressions,
+                $this->separatorExpression
+            );
+        }
+
+        foreach ($profanities as $profanity) {
+            if ($this->stringHasProfanity($string, $profanity)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -242,69 +306,5 @@ class Check
     private function stringHasProfanity($string, $profanity)
     {
         return preg_match($profanity, $string) === 1;
-    }
-
-    /**
-     * Generates the separator regex to test characters in between letters.
-     *
-     * @param array  $characters
-     * @param array  $escapedCharacters
-     * @param string $quantifier
-     *
-     * @return string
-     */
-    private function generateEscapedExpression(
-        array $characters = array(),
-        array $escapedCharacters = array(),
-        $quantifier = '*?'
-    ) {
-        $regex = $escapedCharacters;
-        foreach ($characters as $character) {
-            $regex[] = preg_quote($character, '/');
-        }
-
-        return '[' . implode('', $regex) . ']' . $quantifier;
-    }
-
-    /**
-     * Generates the separator regular expression.
-     *
-     * @return string
-     */
-    private function generateSeparatorExpression()
-    {
-        return $this->generateEscapedExpression($this->separatorCharacters, $this->escapedSeparatorCharacters);
-    }
-
-    /**
-     * Generates a list of regular expressions for each character substitution.
-     *
-     * @return array
-     */
-    protected function generateCharacterExpressions()
-    {
-        $characterExpressions = array();
-        foreach ($this->characterSubstitutions as $character => $substitutions) {
-            $characterExpressions[ $character ] = $this->generateEscapedExpression(
-                    $substitutions,
-                    array(),
-                    '+?'
-                ) . self::SEPARATOR_PLACEHOLDER;
-        }
-
-        return $characterExpressions;
-    }
-
-    /**
-     * Load 'profanities' from config file.
-     *
-     * @param $config
-     *
-     * @return array
-     */
-    private function loadProfanitiesFromFile($config)
-    {
-        /** @noinspection PhpIncludeInspection */
-        return include($config);
     }
 }
