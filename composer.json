@@ -18,8 +18,8 @@
     ],
     "scripts": {
         "test": [
-            "phpspec run",
-            "phpunit -- --bootstrap vendor/autoload.php tests/ProfanityFilterTest"
+            "@specTest",
+            "@unitTest"
         ],
         "specTest": "phpspec run",
         "unitTest": "phpunit tests/ProfanityFilterTest"
