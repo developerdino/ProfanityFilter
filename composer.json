@@ -1,6 +1,18 @@
 {
-    "name": "mofodojodino/profanity-filter",
+    "authors": [
+        {
+            "name": "Dean Tedesco",
+            "email": "dino@tedesco.net.au"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    },
     "description": "Filters out profanities from strings.",
+    "license": "MIT",
+    "name": "mofodojodino/profanity-filter",
     "require": {
         "php": ">=7.2"
     },
@@ -8,14 +20,6 @@
         "phpspec/phpspec": "~2.0",
         "phpunit/phpunit": "~4.8"
     },
-    "autoload": {"psr-0": {"": "src"}},
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Dean Tedesco",
-            "email": "dino@tedesco.net.au"
-        }
-    ],
     "scripts": {
         "test": [
             "@specTest",
