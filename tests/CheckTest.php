@@ -174,22 +174,6 @@ class CheckTest extends TestCase
     }
 
     /**
-     * @test
-     */
-    public function itDoesNotDetectHoAsProfanityInAnthony()
-    {
-        $this->assertFalse($this->checker->hasProfanity("anthony"));
-    }
-
-    /**
-     * @test
-     */
-    public function itDoesNotDetectMickAsASwearWord()
-    {
-        $this->assertFalse($this->checker->hasProfanity("Mick"));
-    }
-
-    /**
      * @return Generator
      */
     public function spacers(): Generator
