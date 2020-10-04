@@ -141,7 +141,12 @@ class Check
      */
     protected $profanities = [];
     protected $separatorExpression;
-    protected $characterExpressions;
+	protected $characterExpressions;
+
+	/**
+	 * Saved bad words found.
+	 */
+	protected $badWordsFound = '';
 
     /**
      * @param null $config
@@ -240,6 +245,27 @@ class Check
         }
 
         return $string;
+	}
+
+	/**
+     * Obfuscates only the string that contains a 'profanity'.
+     *
+     * @param $string
+     *
+     * @return string
+     */
+    public function cleanWords($string, $replacement = '*')
+    {
+        if ($this->hasProfanity($string)) {
+			$profanity = $this->generateProfanityExpression(
+                $this->badWordsFound,
+                $this->characterExpressions,
+                $this->separatorExpression
+			);
+            $string = preg_replace($profanity, str_repeat($replacement, strlen($this->badWordsFound)), $string);
+        }
+
+        return $string;
     }
 
     /**
@@ -251,6 +277,8 @@ class Check
      */
     public function hasProfanity($string)
     {
+		$this->badWordsFound = '';
+
         if (empty($string)) {
             return false;
         }
@@ -266,14 +294,23 @@ class Check
             );
         }
 
-        foreach ($profanities as $profanity) {
+        foreach ($profanities as $i => $profanity) {
             if ($this->stringHasProfanity($string, $profanity)) {
+				$this->badWordsFound = $this->profanities[$i];
                 return true;
             }
         }
 
         return false;
     }
+
+	/**
+	 * Get bad words found
+	 */
+	public function getBadWordsFound()
+	{
+		return $this->badWordsFound;
+	}
 
     /**
      * Generate a regular expression for a particular word
