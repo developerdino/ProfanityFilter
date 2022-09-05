@@ -993,6 +993,7 @@ return [
     'qweir',
     'rag head',
     'raghead',
+    'rape',
     'raped',
     'rapist',
     'rearend',
